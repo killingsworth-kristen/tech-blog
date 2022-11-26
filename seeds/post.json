@@ -1,0 +1,14 @@
+[
+    {
+        "body": "This is the first test post!",
+        "userId": 1
+    },
+    {
+        "body": "This is the second test post!",
+        "userId": 2
+    },
+    {
+        "body": "This is the third test post!",
+        "userId": 3
+    }
+]

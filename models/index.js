@@ -11,8 +11,8 @@ Comment.belongsTo(User);
 Post.hasMany(Comment);
 Comment.belongsTo(Post);
 
-module.exports = (
+module.exports = {
     User,
     Post,
     Comment
-)
+}
