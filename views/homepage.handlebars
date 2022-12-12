@@ -1,0 +1,16 @@
+<h1>Homepage</h1>
+
+{{#each posts}}
+<a href="/post/{{id}}" class="post-card">
+<div class="card">
+    <div class="title">
+        <h3>{{title}}</h3>
+        <p>{{User.username}}</p>
+        <p>{{createdAt}}</p>
+    </div>
+<p>{{body}}</p>
+</div>   
+{{/each}}
+</a>
+
+<script src="/js/homepage.js"></script>

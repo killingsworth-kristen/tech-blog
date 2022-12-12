@@ -1,17 +1,17 @@
 [
     {
         "body":"This is a great post!",
-        "userId": 2,
-        "postId": 1
+        "UserId": 2,
+        "PostId": 1
     },
     {
         "body":"This is a great post!",
-        "userId": 3,
-        "postId": 2
+        "UserId": 3,
+        "PostId": 2
     },
     {
         "body":"This is a great post!",
-        "userId": 1,
-        "postId": 3
+        "UserId": 1,
+        "PostId": 3
     }
 ]

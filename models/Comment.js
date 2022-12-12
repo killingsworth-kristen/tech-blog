@@ -11,11 +11,13 @@ Comment.init(
         },
         date: {
             type: DataTypes.DATE,
+            defaultValue: Date.now,
             allowNull: false
         }
     },
     {
-        sequelize
+        sequelize,
+        tableName: `comments`
     }
 )
 

@@ -1,0 +1,17 @@
+<h1>Dashboard</h1>
+<div>
+    <h2>{{user.username}}'s Page</h2>
+    <button id="logoutBtn">Logout</button>
+</div>
+    {{#each user.Posts}}
+    <div class="card">
+        <div class="title">
+            <h3>{{title}}</h3>
+            <p>{{createdAt}}</p>
+        </div>
+    <p>{{body}}</p>
+    </div>  
+    {{/each}} 
+
+<script src="/js/logout.js"></script>
+
