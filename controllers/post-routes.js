@@ -3,16 +3,23 @@ const {User, Post, Comment} = require('./../models');
 
 router.get('/:postId', async (req,res)=> {
     try {
-        const postData = await User.findOne({
+        if (!req.session.logged_in) {
+            res.redirect('login')
+        }
+        const postData = await Post.findOne({
+            where: { id: req.params.postId },
             include: [{
-                model: Post,
-                include: {
-                    model: Comment
-                },
-                where: {id: req.params.postId},
-                
-            }]
-        });
+                model: User,
+                attributes: ['username'],
+            }, {
+                model: Comment,
+                include: [{
+                    model: User,
+                    attributes: ['username'],
+                }],
+            }],
+        })
+
         if (!postData) {
             res.status(404).json({msg: `This post doesn't exist!`})
             return
@@ -30,5 +37,36 @@ router.get('/:postId', async (req,res)=> {
         res.status(500).json({msg: `${err}`})
     }
 });
+
+router.post('/:postId', async (req,res)=>{
+    if (!req.session.logged_in) {
+        res.redirect('login')
+    }
+        await Comment.create({
+            body: req.body.body,
+            UserId: req.session.user_id,
+            PostId: req.params.postId
+        })
+        location.reload()
+    
+})
+
+// create new post
+router.post('/', async (req,res)=>{
+    try{
+        if (!req.session.logged_in) {
+            res.redirect('login')
+        }
+        await Post.create({
+            title: req.body.title,
+            body: req.body.body,
+            UserId: req.session.user_id
+        })
+        location.reload()
+    } catch (err) {
+        console.log(err);
+        res.json(err)
+    }
+})
 
 module.exports = router;

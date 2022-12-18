@@ -32,4 +32,16 @@ router.get('/:postId', async (req,res)=>{
 });
 
 
+
+// new post
+router.post('/', async (req,res) =>{
+    try {
+        const newPost = await Post.create(req.body);
+        res.json(newPost)
+    } catch (err) {
+        console.log(err);
+        res.json(err)
+    }
+})
+
 module.exports = router

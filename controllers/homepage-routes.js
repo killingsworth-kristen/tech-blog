@@ -11,6 +11,7 @@ router.get(`/`, async (req,res)=>{
         console.log(`${allPosts} this is before serialization`)
         const posts = allPosts.map((postArr)=>postArr.get({ plain: true }));
         console.log(`${posts} this is after serialization`)
+        console.log(allPosts)
         res.render(`homepage`, {
             posts: posts,
             logged_in:req.session.logged_in

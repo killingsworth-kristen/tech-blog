@@ -1,6 +1,7 @@
 // logout route
 const logoutBtn = document.getElementById('logoutBtn');
 logoutBtn.addEventListener("click", (e)=>{
+    console.log("clicked logout!")
     fetch("/api/users/logout",{
         method:"POST",
         headers: {

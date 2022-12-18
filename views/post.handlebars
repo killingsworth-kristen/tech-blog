@@ -1,21 +1,21 @@
 <div class="card">
     <div class="title">
-        <h3>{{post.Posts.[0].title}}</h3>
-        <p>{{post.username}}</p>
-        <p>{{post.Posts.[0].createdAt}}</p>
+        <h3>{{post.title}}</h3>
+        <p>{{post.User.username}}</p>
+        <p>{{post.createdAt}}</p>
     </div>
-<p>{{post.Posts.[0].body}}</p>
+<p>{{post.body}}</p>
 <form id="comment-box">
-    <input type="text" name="comment-text" placeholder="Leave a comment!"/>
+    <input id="comment-text" type="text" name="comment-text" placeholder="Leave a comment!"/>
     <button id="commentBtn">Comment</button>
 </form>
 </div>
-{{#each post.comment}}
+{{#each post.Comments}}
 <div>
     <div>
-        <h5>{{user.username}}</h5>
+        <h5>{{User.username}}</h5>
         <p>{{createdAt}}</p>
     </div>
-    <p>{{comment.body}}</p>
+    <p>{{body}}</p>
 </div>
 {{/each}}

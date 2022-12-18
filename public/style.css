@@ -13,3 +13,7 @@ a:link {
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+

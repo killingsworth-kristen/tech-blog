@@ -1,17 +1,38 @@
 <h1>Dashboard</h1>
 <div>
     <h2>{{user.username}}'s Page</h2>
-    <button id="logoutBtn">Logout</button>
 </div>
-    {{#each user.Posts}}
-    <div class="card">
+
+<div>
+    <button id="new-post-btn">Create a New Post!</button>
+    <form id="new-post-form" class="hidden">
+        <input type="text" placeholder="title" name="title" id="post-title"/>
+        <input type="text" placeholder="body" name="body" id="post-body"/>
+        <button id="submit-new-post-btn">Submit</button>
+    </form>
+</div>
+
+{{#each user.Posts}}
+    <div class="card" id={{id}}>
         <div class="title">
             <h3>{{title}}</h3>
             <p>{{createdAt}}</p>
         </div>
     <p>{{body}}</p>
-    </div>  
-    {{/each}} 
+    {{!-- <button class="edit-post-btn" id={{id}}>Edit Post</button> --}}
+    </div>
+    <div class="edit-card hidden" id="edit-{{id}}">
+        <form class="edit-card-form">
+            {{!-- <textarea class="update-title" name="title" placeholder={{title}}/> --}}
+            {{!-- <textarea class="update-body" name="body" placeholder={{body}}/> --}}
+            <input class="update-title" type="text" name="title" placeholder={{title}}/>
+            <input class="update-body" type="text" name="body" placeholder={{body}}/>
+            <button class="update-btn">Update Post</button>
+            <button class="delete-btn">Delete Post</button>
+        </form>
+    </div>
+{{/each}} 
 
+<script src="/js/dashboard.js"/>
 <script src="/js/logout.js"></script>
 
