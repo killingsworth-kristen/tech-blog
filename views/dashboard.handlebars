@@ -13,15 +13,15 @@
 </div>
 
 {{#each user.Posts}}
-    <div class="card" id={{id}}>
+    <div class="card" id={{id}} style="border: solid;margin: 5%;">
         <div class="title">
-            <h3>{{title}}</h3>
-            <p>{{createdAt}}</p>
+            <h3 style="margin: 1rem;">{{title}}</h3>
+            <p style="padding: 1rem;">{{createdAt}}</p>
         </div>
-    <p>{{body}}</p>
+    <p style="padding: 1rem;margin: 0;">{{body}}</p>
     {{!-- <button class="edit-post-btn" id={{id}}>Edit Post</button> --}}
     </div>
-    <div class="edit-card hidden" id="edit-{{id}}">
+    <div class="edit-card hidden" id="edit-{{id}}" style="border: solid;margin: 5%;">
         <form class="edit-card-form">
             {{!-- <textarea class="update-title" name="title" placeholder={{title}}/> --}}
             {{!-- <textarea class="update-body" name="body" placeholder={{body}}/> --}}

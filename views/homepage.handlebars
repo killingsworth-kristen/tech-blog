@@ -1,14 +1,14 @@
 <h1>Homepage</h1>
 
 {{#each posts}}
-<a href="/post/{{id}}" class="post-card">
-<div class="card">
+<a href="/post/{{id}}" class="post-card" style="text-decoration: none;color: black;">
+<div class="card" style="border: solid black;margin: 5%;">
     <div class="title">
-        <h3>{{title}}</h3>
-        <p>{{User.username}}</p>
-        <p>{{createdAt}}</p>
+        <h3 style="margin: 1rem;">{{title}}</h3>
+        <p style="padding: 1rem;margin: 0;">{{User.username}}</p>
+        <p style="padding: 1rem;margin: 0;">{{createdAt}}</p>
     </div>
-<p>{{body}}</p>
+<p style="padding: 1rem;margin: 0;">{{body}}</p>
 </div>   
 {{/each}}
 </a>

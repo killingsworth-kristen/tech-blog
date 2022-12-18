@@ -1,19 +1,52 @@
 :root {
     --primary: #164117;
-    --accent: #f7ecd7;
+    --accent: #c8c2b6;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--accent);
 }
 
-a:link {
+nav {
+    background-color: var(--primary);
+    height: 75px;
+}
+
+nav a, button {
+    background-color: var(--primary);
+    color: var(--accent);
     text-decoration: none;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .hidden {
     display: none;
 }
+
+h1 {
+    margin-left: 2%;
+}
+
+h2 {
+    margin-left: 2%;
+}
+
+#new-post-btn {
+    margin-left: 2%;
+    padding: 1rem;
+}
+
+.card {
+    border: solid;
+}
+
+
 

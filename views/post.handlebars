@@ -1,17 +1,19 @@
-<div class="card">
+<div class="card" style="border: solid;margin: 0 5% 5% 5%;">
     <div class="title">
-        <h3>{{post.title}}</h3>
-        <p>{{post.User.username}}</p>
-        <p>{{post.createdAt}}</p>
+        <h3 style="padding: 1rem;margin: 0;">{{post.title}}</h3>
+        <p style="padding: 1rem;margin: 0;">{{post.User.username}}</p>
+        <p style="padding: 1rem;margin: 0;">{{post.createdAt}}</p>
     </div>
-<p>{{post.body}}</p>
+<p style="padding: 1rem;margin: 0;">{{post.body}}</p>
 <form id="comment-box">
     <input id="comment-text" type="text" name="comment-text" placeholder="Leave a comment!"/>
     <button id="commentBtn">Comment</button>
 </form>
 </div>
+<h3 style="margin: 0 5%">Comments:</h3>
+<div class="comments-container">
 {{#each post.Comments}}
-<div>
+<div style="border: solid;margin: 0 5% 5% 5%;padding: 1rem;width: 70%">
     <div>
         <h5>{{User.username}}</h5>
         <p>{{createdAt}}</p>
@@ -19,3 +21,4 @@
     <p>{{body}}</p>
 </div>
 {{/each}}
+</div>
